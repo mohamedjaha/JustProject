@@ -1,6 +1,7 @@
 ﻿using FamilyDataCollector.Data.Models;
 using FamilyDataCollector.DTO;
 using FamilyDataCollector.Repository.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static Azure.Core.HttpHeader;
@@ -9,6 +10,7 @@ namespace FamilyDataCollector.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Collector")]
     public class FathersController : ControllerBase
     {
         protected IUnitOfWork _UnitOfWork { get; set; }

@@ -1,8 +1,9 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "FamilyDataCollector",
-    "version": "1.0"
+    "title": "Test Api",
+    "description": "we are here testing Api and try Auth",
+    "version": "v2"
   },
   "paths": {
     "/api/Account/CreateNewUser": {
@@ -166,7 +167,6 @@
         "required": [
           "email",
           "password",
-          "role",
           "userName"
         ],
         "type": "object",
@@ -186,11 +186,6 @@
           "phoneNumber": {
             "type": "string",
             "nullable": true
-          },
-          "role": {
-            "minLength": 1,
-            "pattern": "^(Collector|Admin)$",
-            "type": "string"
           }
         },
         "additionalProperties": false
